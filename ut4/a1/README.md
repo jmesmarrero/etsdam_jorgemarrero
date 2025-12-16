@@ -55,7 +55,7 @@ En la siguiente tabla debes especificar cada clase, la relación existente entre
 
 A continuación se muestra el diagrama de clases: 
 
-![Diagrama UML](img/PlataformaOline1.png)
+![Diagrama UML](img/PlataformaOline.png)
 
 
 
