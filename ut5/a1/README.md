@@ -1,6 +1,6 @@
 <center>
 
-![Logotipo del centro deportivo](/img/001.PNG)
+![Logotipo del centro deportivo](img/001.PNG)
 
 </center>
 
