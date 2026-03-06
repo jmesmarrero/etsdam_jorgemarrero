@@ -56,7 +56,7 @@ Debes entregar una tabla con el siguiente formato:
 |:----:|:----------:|:---------:|:------------:|
 | CP1  |  [3,10,5]  |     6     | Caso normal  |
 | CP2  |  [5,5,5]   |     5     | Caso normal  |
-| CP3  |   [0,10]   |     5     | Caso límite |
+| CP3  |   [0,10]   |     5     | Caso normal |
 | CP4  |   [0,0]    |     0     | Caso límite |
 | CP5  |  [10,10]   |    10     | Caso límite |
 | CP6  | [5,6,7,10] |     7     | Caso normal  |
