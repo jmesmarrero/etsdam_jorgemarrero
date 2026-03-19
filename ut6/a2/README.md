@@ -67,28 +67,73 @@ if(CalculadoraNotas.calcularMedia(new int[]{6,7,8}) != 7){
 }
 ```
 
-
-Inserta el código del programa aquí:
-
 ```java
+public class Main {
+    public static void main(String[] args) {
 
+        // varias notas
+        System.out.println("Media 6,7,8 = " + CalculadoraNotas.calcularMedia(new int[]{6,7,8}));
+
+        // una sola nota
+        System.out.println("Media 10 = " + CalculadoraNotas.calcularMedia(new int[]{10}));
+
+        // lista vacía
+        try {
+            CalculadoraNotas.calcularMedia(new int[]{});
+        } catch (Exception e) {
+            System.out.println("Correcto: error por lista vacía");
+        }
+
+        // nota fuera de rango
+        try {
+            CalculadoraNotas.calcularMedia(new int[]{5, 12});
+        } catch (Exception e) {
+            System.out.println("Correcto: error por nota fuera de rango");
+        }
+    }
+}
 ```
+
+ 
+
+
 
 Adjunta una captura de pantalla de la terminal de:
 
 + Varias notas:
 
-![](/daw/img/img/001.png)
+```java
+ System.out.println("Media 6,7,8 = " + CalculadoraNotas.calcularMedia(new int[]{6,7,8}));
+```
+<!--![](/daw/img/img/001.png)-->
 
 + Una sola nota:
 
+```java
+ System.out.println("Media 10 = " + CalculadoraNotas.calcularMedia(new int[]{10}));
+```
 ![](/daw/img/img/002.png)
 
 + Lista vacía
-
+```java
+ try {
+            CalculadoraNotas.calcularMedia(new int[]{});
+        } catch (Exception e) {
+            System.out.println("Correcto: error por lista vacía");
+        }
+```
 ![](/daw/img/img/003.png)
 
 + Nota fuera de rango
+
+```java
+ try {
+            CalculadoraNotas.calcularMedia(new int[]{5, 12});
+        } catch (Exception e) {
+            System.out.println("Correcto: error por nota fuera de rango");
+        }
+
+```
 
 ![](/daw/img/img/004.png)
 
@@ -123,6 +168,35 @@ public class CalculadoraNotasTest {
 Inserta el código del programa aquí con todos los tests:
 
 ```java
+public class CalculadoraNotasTest {
+
+    @Test
+    void testMediaCorrecta() {
+        assertEquals(7, CalculadoraNotas.calcularMedia(new int[]{6,7,8}));
+    }
+
+    @Test
+    void testMediaConDecimales() {
+        assertEquals(6, CalculadoraNotas.calcularMedia(new int[]{5,6,7}));
+    }
+
+    @Test
+    void testUnaSolaNota() {
+        assertEquals(10, CalculadoraNotas.calcularMedia(new int[]{10}));
+    }
+
+    @Test
+    void testListaVacia() {
+        assertThrows(IllegalArgumentException.class,
+            () -> CalculadoraNotas.calcularMedia(new int[]{}));
+    }
+
+    @Test
+    void testNotaFueraDeRango() {
+        assertThrows(IllegalArgumentException.class,
+            () -> CalculadoraNotas.calcularMedia(new int[]{3, 15}));
+    }
+}
 
 ```
 
