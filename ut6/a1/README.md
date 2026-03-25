@@ -60,10 +60,10 @@ Debes entregar una tabla con el siguiente formato:
 | CP4  |   [0,0]    |     0     | Caso límite |
 | CP5  |  [10,10]   |    10     | Caso límite |
 | CP6  | [5,6,7,10] |     7     | Caso normal  |
-| CP7  | [0,"a", 6] |   Error   | Caso erroneo |
-| CP8  |     []     |   Error   | Caso erroneo |
-| CP9  |   [9,50]   |   Error   | Caso erroneo |
-| CP10 |  [a,J,9]   |   Error   | Caso erroneo |
+| CP7  | [0,"a", 6] |   Error   | Caso erróneo |
+| CP8  |     []     |   Error   | Caso erróneo |
+| CP9  |   [9,50]   |   Error   | Caso erróneo |
+| CP10 |  [a,J,9]   |   Error   | Caso erróneo |
 
 Tipos de caso posibles:
 
