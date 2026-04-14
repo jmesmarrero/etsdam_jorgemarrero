@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CarritoService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">carrito</a> &gt; <a href="index.source.html" class="el_package">com.tienda</a> &gt; <span class="el_source">CarritoService.java</span></div><h1>CarritoService.java</h1><pre class="source lang-java linenums">package com.tienda;
+
+import java.util.List;
+
+<span class="fc" id="L5">public class CarritoService {</span>
+
+    // 1. Calcular subtotal
+    public double calcularSubtotal(List&lt;Producto&gt; carrito) {
+<span class="fc" id="L9">        double subtotal = 0;</span>
+
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        for (Producto p : carrito) {</span>
+<span class="fc" id="L12">            subtotal += p.getPrecio() * p.getCantidad(); </span>
+<span class="fc" id="L13">        }</span>
+
+<span class="fc" id="L15">        return subtotal;</span>
+    }
+
+    // 2. Aplicar descuento
+    public double aplicarDescuento(double subtotal, double descuento) {
+
+<span class="fc bfc" id="L21" title="All 4 branches covered.">        if (descuento &lt; 0 || descuento &gt; 100) { </span>
+<span class="fc" id="L22">            throw new IllegalArgumentException(&quot;Descuento inválido&quot;);</span>
+        }
+
+<span class="fc" id="L25">        double cantidadDescuento = subtotal * descuento / 100;</span>
+<span class="fc" id="L26">        return subtotal - cantidadDescuento;</span>
+    }
+
+    // 3. Calcular envío
+    public double calcularEnvio(double subtotal) {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (subtotal &gt;= 100) { </span>
+<span class="fc" id="L32">            return 0;</span>
+        } else {
+<span class="fc" id="L34">            return 5;</span>
+        }
+    }
+
+    // 4. Calcular total
+    public double calcularTotal(List&lt;Producto&gt; carrito, double descuento) {
+
+<span class="fc" id="L41">        double subtotal = calcularSubtotal(carrito);</span>
+
+<span class="fc" id="L43">        double conDescuento = aplicarDescuento(subtotal, descuento);</span>
+
+<span class="fc" id="L45">        double envio = calcularEnvio(subtotal);</span>
+
+<span class="fc" id="L47">        return conDescuento + envio;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
