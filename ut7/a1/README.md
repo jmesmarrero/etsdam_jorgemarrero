@@ -101,7 +101,7 @@ private int cantidad;
 ```
 4. Todo el programa esta dentro del Main, díficil de leer mantener y reutilizar
 - Sería mejor dividir en métodos más pequeños fuera del Main
-5. El programa mezcla las responsabilidades, el programa:
+5. El programa mezcla las responsabilidades,<br>El programa:<br>
 `- Calcula precios`<br>
 `- Aplica reglas de negocio`<br>
 `- Imprime resultados`<br>
@@ -114,7 +114,7 @@ for (Producto p : lista)
 7. No hay documentación que explique el código y eso dificulta el mantenimiento. 
 - La mejora sería añadir comentarios claros.
 ```java
-/** Constructor de la clase Precio con todos sus atributos
+/** Constructor de la clase Producto con todos sus atributos
      * @param nombre nombre del producto
      * @param precio precio del producto
      * @param cantidad cantidad del producto
